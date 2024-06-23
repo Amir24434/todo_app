@@ -11,13 +11,13 @@ void main() async {
 
   var box = await Hive.openBox<Task>(HiveDataStore.boxName);
 
-  box.values.forEach((task) {
+  for (var task in box.values) {
     if (task.createdAtTime.day != DateTime.now().day) {
       task.delete();
     } else {
       //Do nothing for now
     }
-  });
+  }
   runApp(const MyApp());
 }
 
@@ -28,6 +28,7 @@ class BaseWidget extends InheritedWidget {
         );
 
   final HiveDataStore dataStore = HiveDataStore();
+  // ignore: overridden_fields, annotate_overrides
   final Widget child;
 
   static BaseWidget of(BuildContext context) {
@@ -41,7 +42,6 @@ class BaseWidget extends InheritedWidget {
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    // TODO: implement updateShouldNotify
     return false;
   }
 }

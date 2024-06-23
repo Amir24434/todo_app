@@ -30,8 +30,8 @@ class TaskView extends StatefulWidget {
 }
 
 class _TaskViewState extends State<TaskView> {
-  var title;
-  var subTitle;
+  String? title;
+  String? subTitle;
   DateTime? time;
   DateTime? date;
 
@@ -86,8 +86,8 @@ class _TaskViewState extends State<TaskView> {
     if (widget.titleTaskController?.text != null &&
         widget.descriptionTaskController?.text != null) {
       try {
-        widget.titleTaskController?.text = title;
-        widget.descriptionTaskController?.text = subTitle;
+        widget.titleTaskController?.text = title!;
+        widget.descriptionTaskController?.text = subTitle!;
 
         widget.task?.save();
       } catch (e) {
