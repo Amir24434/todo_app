@@ -18,7 +18,7 @@ void main() async {
       //Do nothing for now
     }
   }
-  runApp(const MyApp());
+  runApp(BaseWidget(child: const MyApp()));
 }
 
 class BaseWidget extends InheritedWidget {

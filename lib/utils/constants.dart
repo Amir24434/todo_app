@@ -6,6 +6,17 @@ import 'package:todo_app/utils/app_str.dart';
 
 String lottieURL = "asset/lottie/lottie1.json";
 
+class AppImages {
+  // splash logo
+  static const String darkAppLogo = 'asset/splashLogo.png';
+  static const String lightAppLogo = 'asset/splashLogo.png';
+
+// onboarding images
+  static const String onBoardingImage1 = 'asset/scooter.png';
+  static const String onBoardingImage2 = 'asset/car.png';
+  static const String onBoardingImage3 = 'asset/lorry.png';
+}
+
 emptyWarning(BuildContext context) {
   return FToast.toast(
     context,
